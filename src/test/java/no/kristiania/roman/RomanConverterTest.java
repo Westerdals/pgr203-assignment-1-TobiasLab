@@ -27,6 +27,8 @@ class RomanConverterTest {
             return result;
         } else if (number == 1) {
             result = "I";
+        } else if (number == 3) {
+            result = "III";
         }
         return result;
     }
