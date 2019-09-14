@@ -27,14 +27,26 @@ class RomanConverterTest {
 
     @Test
     void shouldConvertVto5() {
-        assertEquals("V", toRoman(4));
+        assertEquals("V", toRoman(5));
+    }
+
+    @Test
+    void shouldCalculate6Through8() {
+        assertEquals("VI", toRoman(6));
+        assertEquals("VII", toRoman(7));
+        assertEquals("VIII", toRoman(8));
+    }
+
+    @Test
+    void shouldReturnIXfor9() {
+        assertEquals("IX", toRoman(9));
     }
 
     private String toRoman(int number) {
         StringBuilder result = new StringBuilder();
-        if (number == 5) {
+        if (number >= 5) {
             result.append("V");
-            number = 0;
+            number -= 5;
         }
         if (number == 4) {
             result.append("IV");
