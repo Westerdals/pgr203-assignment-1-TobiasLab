@@ -22,13 +22,8 @@ class RomanConverterTest {
 
     private String toRoman(int number) {
         String result = "";
-        if (number == 2) {
-            result = "II";
-            return result;
-        } else if (number == 1) {
-            result = "I";
-        } else if (number == 3) {
-            result = "III";
+        for (int i = 0; i < number; i++) {
+            result += "I";
         }
         return result;
     }
