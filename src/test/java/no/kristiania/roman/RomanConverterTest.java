@@ -42,16 +42,25 @@ class RomanConverterTest {
         assertEquals("IX", toRoman(9));
     }
 
+    @Test
+    void shouldReturnXfor10() {
+        assertEquals("X", toRoman(10));
+        assertEquals("XVIII", toRoman(18));
+    }
+
+    @Test
+    void shouldCalculateMultiplesOfTen() {
+        assertEquals("XXXVII", toRoman(37));
+    }
+
     private String toRoman(int number) {
         StringBuilder result = new StringBuilder();
+        number = toRomanDigit(number, result, 10, "X");
         if (number >= 9) {
             result.append("IX");
             number = 0;
         }
-        if (number >= 5) {
-            result.append("V");
-            number -= 5;
-        }
+        number = toRomanDigit(number, result, 10, "X");
         if (number == 4) {
             result.append("IV");
             number = 0;
@@ -60,6 +69,14 @@ class RomanConverterTest {
             result.append("I");
         }
         return result.toString();
+    }
+
+    private int toRomanDigit(int number, StringBuilder result, int digitValue, String digitSymbol) {
+        if (number >= digitValue) {
+            result.append(digitSymbol);
+            number -= digitValue;
+        }
+        return number;
     }
 }
 
