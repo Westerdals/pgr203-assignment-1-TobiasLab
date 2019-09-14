@@ -15,8 +15,20 @@ class RomanConverterTest {
         assertEquals("II", toRoman(2));
     }
 
+    @Test
+    void shouldConvertIIIto3() {
+        assertEquals("III", toRoman(3));
+    }
+
     private String toRoman(int number) {
-        return "I";
+        String result = "";
+        if (number == 2) {
+            result = "II";
+            return result;
+        } else if (number == 1) {
+            result = "I";
+        }
+        return result;
     }
 }
 
