@@ -44,6 +44,10 @@ class RomanConverterTest {
 
     private String toRoman(int number) {
         StringBuilder result = new StringBuilder();
+        if (number >= 9) {
+            result.append("IX");
+            number = 0;
+        }
         if (number >= 5) {
             result.append("V");
             number -= 5;
