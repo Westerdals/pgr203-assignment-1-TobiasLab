@@ -8,6 +8,7 @@ public class RomanConverter {
         number = toRomanDigit(number, result, 500, "D");
         number = toRomanDigit(number, result, 400, "CD");
         number = toRomanDigit(number, result, 100, "C");
+        number = toRomanDigit(number, result, 90, "XC");
         number = toRomanDigit(number, result, 50, "L");
         number = toRomanDigit(number, result, 40, "XL");
         number = toRomanDigit(number, result, 10, "X");
